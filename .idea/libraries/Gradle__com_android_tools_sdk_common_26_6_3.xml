@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.tools:sdk-common:26.6.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/26.6.3/e0561a3a8faa96be6bf296888f0d8ba6725edf1/sdk-common-26.6.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/26.6.3/3bedfb30f274f99991cfb7d2a918f41b32ccf40a/sdk-common-26.6.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/26.6.3/1f802c20f76ca114af21a22610f6083438d51f58/sdk-common-26.6.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
