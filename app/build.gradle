@@ -9,12 +9,12 @@ plugins {
 
 android {
     compileSdkVersion Versions.compileSdkVersion
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.mynotes"
-        minSdkVersion 19
-        targetSdkVersion 29
+        minSdkVersion 20
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -42,36 +42,34 @@ android {
 dependencies {
 
     implementation Deps.stdlib
-    implementation Deps.constraintlayout
+    implementation Deps.coreKtx
+    implementation Deps.appcompat
     implementation Deps.material
+    implementation Deps.constraintlayout
     implementation Deps.lifecycleLiveData
     implementation Deps.lifecycleRuntime
     implementation Deps.lifecycleViewModel
     implementation Deps.fragmentKtx
-    implementation Deps.coreKtx
+    implementation Deps.navigationFragmentKtx
     implementation Deps.navigationUiKtx
-    implementation Deps.gsonConverter
-    implementation Deps.appcompat
     implementation Deps.retrofit
-    implementation Deps.extJunit
-    implementation Deps.coroutinesAndroid
-    implementation Deps.coroutinesCore
+    implementation Deps.gsonConverter
     implementation Deps.gson
+    implementation Deps.hilt
+    implementation Deps.hiltViewModel
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt Deps.hiltCompiler
+    kapt Deps.hiltAndroidCompiler
+    implementation Deps.coroutinesCore
+    implementation Deps.coroutinesAndroid
+    kapt Deps.roomCompiler
     implementation Deps.glide
     kapt Deps.glideCompiler
-    implementation Deps.hilt
-    implementation Deps.junit
-    implementation Deps.hiltViewModel
-    kapt Deps.hiltAndroidCompiler
-    kapt Deps.hiltCompiler
-    kapt Deps.roomCompiler
-    implementation Deps.hiltGradlePlugin
-    implementation Deps.roomRuntime
     implementation Deps.roomKtx
-    implementation Deps.navigationFragmentKtx
-    implementation Deps.navigationGradlePlugin
-    implementation Deps.espressoCore
-    implementation Deps.roomCompiler
-    implementation Deps.gradlePlugin
+    implementation Deps.roomRuntime
+    testImplementation Deps.junit
+    androidTestImplementation Deps.extJunit
+    androidTestImplementation Deps.espressoCore
 
 }

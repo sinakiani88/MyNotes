@@ -21,7 +21,7 @@ abstract class Appdatabase : RoomDatabase() {
                 ISTANCE?.let {
                     ISTANCE
                 } ?: run {
-                    ISTANCE = Room.databaseBuilder(context,Appdatabase::class.java,"note_db")
+                    ISTANCE = Room.databaseBuilder(context,Appdatabase::class.java,"note_table")
                         .fallbackToDestructiveMigration().allowMainThreadQueries().build()
                 }
                 return ISTANCE

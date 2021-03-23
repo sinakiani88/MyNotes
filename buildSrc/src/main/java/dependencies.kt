@@ -1,5 +1,5 @@
 object Versions{
-    const val compileSdkVersion = 29
+    const val compileSdkVersion = 30
     const val gradle_version = "4.1.2"
     const val kotlin_version = "1.4.31"
     const val retrofit_version = "2.9.0"

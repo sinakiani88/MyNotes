@@ -7,13 +7,11 @@ import com.example.mynotes.repository.AddNoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AddNoteViewModel constructor(private val repositoryAdd:AddNoteRepository):ViewModel() {
+class AddNoteViewModel constructor(private val repository:AddNoteRepository):ViewModel() {
 
     fun addNote (noteEntity: NoteEntity){
         viewModelScope.launch(Dispatchers.IO) {
-            repositoryAdd.insertNoteData(noteEntity)
-
+            repository.insertNoteData(noteEntity)
         }
     }
-
 }

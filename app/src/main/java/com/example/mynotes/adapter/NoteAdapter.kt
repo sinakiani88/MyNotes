@@ -9,7 +9,9 @@ import com.example.mynotes.data.entities.NoteEntity
 import com.example.mynotes.databinding.ItemlistBinding
 import com.example.mynotes.utils.Extensions.dateFormat
 
-class NoteAdapter constructor():RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter constructor(private val onClick:(note:NoteEntity?) ->Unit):RecyclerView
+.Adapter<NoteAdapter
+.NoteViewHolder>() {
 
 
     private val differCallBack = object : DiffUtil.ItemCallback<NoteEntity>(){
@@ -46,6 +48,10 @@ class NoteAdapter constructor():RecyclerView.Adapter<NoteAdapter.NoteViewHolder>
                 tvTitle.text = noteEntity?.title
                 tvContent.text = noteEntity?.content
                 tvDate.text = noteEntity?.creationTime?.dateFormat()
+
+                imageDelete.setOnClickListener {
+                    onClick(noteEntity)
+                }
             }
         }
     }

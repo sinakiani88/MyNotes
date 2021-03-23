@@ -1,10 +1,9 @@
 package com.example.mynotes.data.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.mynotes.data.entities.NoteEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface NoteDao {
@@ -13,8 +12,12 @@ interface NoteDao {
     fun getNote (id : Long): NoteEntity
 
     @Query("SELECT * FROM note_table" )
-    fun getAllNote (): List<NoteEntity>
+    //fun getAllNote (): LiveData<List<NoteEntity>>
+    fun getAllNote (): Flow<List<NoteEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert (note: NoteEntity)
+
+    @Delete
+    suspend fun delete (note: NoteEntity)
 }
