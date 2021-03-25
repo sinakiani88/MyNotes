@@ -26,7 +26,7 @@ class NoteListFrag : Fragment() {
     private var _binding: FragmentNoteListBinding?= null
     private val binding get() = _binding!!
 
-    private lateinit var noteAdapter: NoteAdapter
+    //private lateinit var noteAdapter: NoteAdapter
     private lateinit var viewModelFactory: NoteListViewModelFactory
     private val viewModel by viewModels<NoteListViewModel> {viewModelFactory}
 
