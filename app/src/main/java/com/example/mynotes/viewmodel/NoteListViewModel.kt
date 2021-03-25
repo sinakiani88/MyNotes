@@ -5,6 +5,7 @@ import com.example.mynotes.data.entities.NoteEntity
 import com.example.mynotes.repository.AddNoteRepository
 import com.example.mynotes.repository.NoteListRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -23,13 +24,10 @@ class NoteListViewModel constructor(private val repository:NoteListRepository):V
         getAllNote()
     }
 
-    fun getAllNote() = flow {
-
-            repository.getAllNote().collect {
-                it.collect { list ->
-                    emit(list)
-                }
-            }
+    fun getAllNote(): Flow<List<NoteEntity>> = flow{
+        repository.getAllNote().collect {
+            emit(it)
+        }
     }.flowOn(Dispatchers.IO)
 
     fun deleteNote (noteEntity: NoteEntity){
